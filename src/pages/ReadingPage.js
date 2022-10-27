@@ -3,7 +3,7 @@ import { Container, Button, Box, Card, Stack, CardMedia, CardActionArea, Typogra
 import { ClipLoader } from "react-spinners";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getReadingList } from "../components/book/bookSlice";
+import { getReadingList, removeBook } from "../components/book/bookSlice";
 
 
 const BACKEND_API = process.env.REACT_APP_BACKEND_API;
@@ -21,9 +21,9 @@ const ReadingPage = () => {
   const chooseBook = (bookId) => {
     setRemovedBookId(bookId);
   };
-  const removeBook = (bookId) => {
-    setRemovedBookId(bookId);
-  };
+  // const removeBook = (bookId) => {
+  //   setRemovedBookId(bookId);
+  // };
 
   useEffect(() => {
     if (removedBookId) return;
